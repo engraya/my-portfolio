@@ -1,0 +1,116 @@
+{% extends 'baseapp/base.html' %}
+
+{% load static %}
+{% block content  %}
+    
+ 
+    <!-- ======= Socials Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Socials</h2>
+          </div>
+          {% for social in socials %}
+          <div class="row" data-aos="fade-in">
+  
+            <div class="col-lg-6 d-flex align-items-stretch">
+              <div class="info">
+                <div class="address">
+                  <i class="bi bi-geo-alt"></i>
+                  <h4>Location:</h4>
+                  <p>A108 Adam Street, New York, NY 535022</p>
+                </div>
+  
+                <div class="email">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email 1:</h4>
+                  <p>info@example.com</p>
+                </div>
+
+                <div class="email">
+                    <i class="bi bi-envelope"></i>
+                    <h4>Email 2:</h4>
+                    <p>info@example.com</p>
+                  </div>
+    
+  
+                <div class="tel">
+                  <i class="bi bi-phone"></i>
+                  <h4>Tel:</h4>
+                  <p>+1 5589 55488 55s</p>
+                </div>
+
+                <div class="phone">
+                    <i class="bi bi-phone"></i>
+                    <h4>Phone:</h4>
+                    <p>+1 5589 55488 55s</p>
+                  </div>
+  
+                
+                  <div class="whatsapp">
+                    <i class="bi bi-whatsapp"></i>
+                    <h4>Whatsapp:</h4>
+                    <p>+1 5589 55488 55s</p>
+                  </div>
+  
+              </div>
+              
+            </div>
+
+            <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="info">
+                 
+                    <div class="facebook">
+                      <i class="bi bi-facebook"></i>
+                      <h4>Facebook:</h4>
+                      <a href=""><p>+1 5589 55488 55s</p></a>
+                    </div>
+    
+                    
+                    <div class="twitter">
+                      <i class="bi bi-twitter"></i>
+                      <h4>Twitter:</h4>
+                      <a href=""><p>+1 5589 55488 55s</p></a>
+                    </div>
+    
+                    
+                    <div class="instagram">
+                      <i class="bi bi-instagram"></i>
+                      <h4>Instagram:</h4>
+                      <a href=""><p>+1 5589 55488 55s</p></a>
+                    </div>
+  
+                    <div class="linkedin">
+                      <i class="bi bi-linkedin"></i>
+                      <h4>Linkedin:</h4>
+                      <a href=""><p>+1 5589 55488 55s</p></a>
+                    </div>
+      
+  
+                    <div class="linkedin">
+                      <i class="bi bi-github"></i>
+                      <h4>Github:</h4>
+                      <a href=""><p>+1 5589 55488 55s</p></a>
+                    </div>
+      
+  
+                    <div class="showcase">
+                      <i class="bi bi-chat"></i>
+                      <h4>Showcase:</h4>
+                      <a href=""><p>+1 5589 55488 55s</p></a>
+                    </div>
+                  
+                </div>
+                
+
+
+              </div>
+          </div>
+          {% endfor %}
+  
+        </div>
+      </section><!-- End Contact Section -->
+
+{% endblock content  %}
+    
