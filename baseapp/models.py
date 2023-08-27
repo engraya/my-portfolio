@@ -87,12 +87,25 @@ class Refree(models.Model):
 class ProfessionalExperience(models.Model):
     job_title = models.CharField(max_length=200, null=True, blank=True)
     starting_date = models.DateField()
-    ending_date = models.DateField()
+    ending_date = models.CharField(max_length=100, null=True, blank=True)
     work_place = models.CharField(max_length=200, null=True, blank=True)
-    job_description = models.TextField()
+    job_description = models.TextField(null=True, blank=True)
+   
 
     def __str__(self):
-        return self.job_title
+        return self.work_place
+
+class JobDescription(models.Model):
+    experience = models.ForeignKey(ProfessionalExperience, on_delete=models.CASCADE, null=True, blank=True)
+    description = models.CharField(max_length=200, null=True, blank=True)
+
+    
+    def __str__(self):
+        return self.job_description
+
+
+
+
 
 
 class SoftSkills(models.Model):
@@ -138,3 +151,17 @@ class MembershipCertificate(models.Model):
 
     def __str__(self):
         return self.issuing_body
+
+
+
+class Membership(models.Model):
+    title = models.CharField(max_length=100, null=True, blank=True)
+    issuing_body = models.CharField(max_length=200, null=True, blank=True)
+    issuing_year = models.CharField(max_length=200, null=True, blank=True)
+    membership_id = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+
+    

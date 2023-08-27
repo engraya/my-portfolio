@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import About, Contact, Social, SoftSkills, Softwares, TechSkills, TechStack
+from .models import About, Contact, Social, SoftSkills, Softwares, TechSkills, TechStack, Education, ProfessionalExperience, Membership, JobDescription
 
 # Create your views here.
 
@@ -21,7 +21,12 @@ def about(request):
 
 
 def resume(request):
-    return render(request, 'baseapp/resume.html')
+    educations = Education.objects.all()
+    memberships = Membership.objects.all()
+    experiences = ProfessionalExperience.objects.all()
+    descriptions = JobDescription.objects.filter()
+    context = { 'educations' : educations, 'memberships' : memberships, 'experiences' : experiences, 'descriptions' : descriptions}
+    return render(request, 'baseapp/resume.html', context)
 
 
 def portfolio(request):
