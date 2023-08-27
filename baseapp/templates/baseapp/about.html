@@ -56,120 +56,86 @@
             <div class="container">
 
               <div class="section-title">
-                <h2>Skills</h2>
+                <h2>Soft Skills</h2>
               </div>
-
+              
               <div class="row skills-content">
-
-                <div class="col-lg-4" data-aos="fade-up">
-
-                  <div class="progress">
-                    <span class="skill">HTML</span>
-                  </div>
+                {% for skill in skills %}
+                <div class="col-lg-3" data-aos="fade-up">
 
                   <div class="progress">
-                    <span class="skill">CSS </span>
-         
-                  </div>
-
-                  <div class="progress">
-                    <span class="skill">JavaScript </span>
-             
+                    <span class="skill">{{skill.title}}</span>
                   </div>
 
                 </div>
+                {% endfor %}
+  
+              </div>
+            </div>
+          </section><!-- End Skills Section -->
+          <!-- ======= Skills Section ======= -->
+          <section id="skills" class="skills section-bg">
+            <div class="container">
 
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-
-                  <div class="progress">
-                    <span class="skill">PHP</span>
-               
-                  </div>
-
-                  <div class="progress">
-                    <span class="skill">WordPress/CMS </span>
-             
-                  </div>
-
-                  <div class="progress">
-                    <span class="skill">Photoshop </span>
-                
-                  </div>
-
-                </div>
-
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="section-title">
+                <h2>Softwares</h2>
+              </div>
+              
+              <div class="row skills-content">
+                {% for software in softwares %}
+                <div class="col-lg-3" data-aos="fade-up">
 
                   <div class="progress">
-                    <span class="skill">PHP</span>
-               
-                  </div>
-
-                  <div class="progress">
-                    <span class="skill">WordPress/CMS </span>
-             
-                  </div>
-
-                  <div class="progress">
-                    <span class="skill">Photoshop </span>
-                
+                    <span class="skill">{{software.title}}</span>
                   </div>
 
                 </div>
-
+                {% endfor %}
 
               </div>
-
             </div>
           </section><!-- End Skills Section -->
 
-          
+           <!-- ======= Skills Section ======= -->
+           <section id="skills" class="skills section-bg">
+            <div class="container">
+
+              <div class="section-title">
+                <h2>Tech Skills</h2>
+              </div>
+              
+              <div class="row skills-content">
+                {% for techskill in techskills %}
+                <div class="col-lg-6" data-aos="fade-up">
+                  <div class="progress">
+                    <p class="skill">{{techskill.title}}</p>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </section><!-- End Skills Section -->
+
           <!-- ======= Skills Section ======= -->
           <section id="skills" class="skills section-bg">
             <div class="container">
 
               <div class="section-title">
                 <h2>Tech Stack</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
 
               <div class="row skills-content">
-
+                {% for techstack in techstacks %}
                 <div class="col-lg-6" data-aos="fade-up">
 
                   <div class="progress">
-                    <h6><span class="skill">HTML </span></h6>
-                    <p>Innovative and deadline-driven Graphic Designer with 3+ years of experience des</p>
+                    <h6><span class="skill">{{techstack.title}}</span></h6>
+                    <p>{{techstack.subtitle}}</p>
                   </div>
-                  <div class="progress">
-                    <h6><span class="skill">HTML </span></h6>
-                    <p>Innovative and deadline-driven Graphic Designer with 3+ years of experience des</p>
-                  </div>
-
-                  <div class="progress">
-                    <h6><span class="skill">HTML </span></h6>
-                    <p>Innovative and deadline-driven Graphic Designer with 3+ years of experience des</p>
-                  </div>
-
+    
                 </div>
-
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-                  <div class="progress">
-                    <h6><span class="skill">HTML </span></h6>
-                    <p>Innovative and deadline-driven Graphic Designer with 3+ years of experience des</p>
-                  </div>
-                  <div class="progress">
-                    <h6><span class="skill">HTML </span></h6>
-                    <p>Innovative and deadline-driven Graphic Designer with 3+ years of experience des</p>
-                  </div>
-                  <div class="progress">
-                    <h6><span class="skill">HTML </span></h6>
-                    <p>Innovative and deadline-driven Graphic Designer with 3+ years of experience des</p>
-                  </div>
-
-                </div>
-
+                {% endfor %}
               </div>
 
             </div>

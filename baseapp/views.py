@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import About, Contact, Social, SoftSkills
+from .models import About, Contact, Social, SoftSkills, Softwares, TechSkills, TechStack
 
 # Create your views here.
 
@@ -13,7 +13,10 @@ def about(request):
     abouts = About.objects.all()
     contacts = Contact.objects.all()
     skills = SoftSkills.objects.all()
-    context = { 'abouts' : abouts, 'contacts' : contacts, 'skills' : skills}
+    softwares = Softwares.objects.all()
+    techskills = TechSkills.objects.all()
+    techstacks = TechStack.objects.all()
+    context = { 'abouts' : abouts, 'contacts' : contacts, 'skills' : skills, 'softwares' : softwares, 'techskills' : techskills, 'techstacks' : techstacks}
     return render(request, 'baseapp/about.html', context)
 
 
