@@ -9,7 +9,7 @@
         <div class="container">
   
           <div class="section-title">
-            <h2>Socials</h2>
+            <h2>Contact Information</h2>
           </div>
           {% for social in socials %}
           <div class="row" data-aos="fade-in">
@@ -18,40 +18,40 @@
               <div class="info">
                 <div class="address">
                   <i class="bi bi-geo-alt"></i>
-                  <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <h4>Home Address:</h4>
+                  <p>{{social.homeAdress}}</p>
                 </div>
   
                 <div class="email">
                   <i class="bi bi-envelope"></i>
-                  <h4>Email 1:</h4>
-                  <p>info@example.com</p>
+                  <h4>Email :</h4>
+                  <p>{{social.primaryEmail}}</p>
                 </div>
 
                 <div class="email">
                     <i class="bi bi-envelope"></i>
                     <h4>Email 2:</h4>
-                    <p>info@example.com</p>
+                    <p>{{social.AlternativeEmail}}</p>
                   </div>
     
   
                 <div class="tel">
                   <i class="bi bi-phone"></i>
                   <h4>Tel:</h4>
-                  <p>+1 5589 55488 55s</p>
+                  <p>{{social.phone2}}</p>
                 </div>
 
                 <div class="phone">
                     <i class="bi bi-phone"></i>
                     <h4>Phone:</h4>
-                    <p>+1 5589 55488 55s</p>
+                    <p>{{social.phone1}}</p>
                   </div>
   
                 
                   <div class="whatsapp">
                     <i class="bi bi-whatsapp"></i>
                     <h4>Whatsapp:</h4>
-                    <p>+1 5589 55488 55s</p>
+                    <p>{{social.whatsapp}}</p>
                   </div>
   
               </div>
@@ -64,41 +64,41 @@
                     <div class="facebook">
                       <i class="bi bi-facebook"></i>
                       <h4>Facebook:</h4>
-                      <a href=""><p>+1 5589 55488 55s</p></a>
+                      <a href="{{social.facebook}}" target="_blank"><p>{{social.facebook}}</p></a>
                     </div>
     
                     
                     <div class="twitter">
                       <i class="bi bi-twitter"></i>
                       <h4>Twitter:</h4>
-                      <a href=""><p>+1 5589 55488 55s</p></a>
+                      <a href="{{social.twitter}}" target="_blank"><p>{{social.twitter}}</p></a>
                     </div>
     
                     
                     <div class="instagram">
                       <i class="bi bi-instagram"></i>
                       <h4>Instagram:</h4>
-                      <a href=""><p>+1 5589 55488 55s</p></a>
+                      <a href="{{social.instagram}}" target="_blank"><p>{{social.instagram}}</p></a>
                     </div>
   
                     <div class="linkedin">
                       <i class="bi bi-linkedin"></i>
                       <h4>Linkedin:</h4>
-                      <a href=""><p>+1 5589 55488 55s</p></a>
+                      <a href="{{social.linkedin}}" target="_blank"><p>{{social.linkedin}}</p></a>
                     </div>
       
   
-                    <div class="linkedin">
+                    <div class="github">
                       <i class="bi bi-github"></i>
                       <h4>Github:</h4>
-                      <a href=""><p>+1 5589 55488 55s</p></a>
+                      <a href="{{social.github}}" target="_blank"><p>{{social.github}}</p></a>
                     </div>
       
   
                     <div class="showcase">
                       <i class="bi bi-chat"></i>
                       <h4>Showcase:</h4>
-                      <a href=""><p>+1 5589 55488 55s</p></a>
+                      <a href="{{social.showcase}}" target="_blank"><p>{{social.showcase}}</p></a>
                     </div>
                   
                 </div>

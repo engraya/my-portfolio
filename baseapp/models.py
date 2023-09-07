@@ -35,7 +35,7 @@ class Education(models.Model):
 class Certification(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
-    year_acquired = models.DateField()
+    year_acquired = models.DateField(null=True, blank=True)
     provider = models.CharField(max_length=200, null=True, blank=True)
 
 
@@ -56,6 +56,12 @@ class Social(models.Model):
     linkedin = models.URLField(null=True, blank=True)
     github = models.URLField(null=True, blank=True)
     showcase = models.URLField(null=True, blank=True)
+    homeAdress = models.CharField(max_length=200, null=True, blank=True)
+    phone1 = models.CharField(max_length=200, null=True, blank=True)
+    phone2 = models.CharField(max_length=200, null=True, blank=True)
+    primaryEmail = models.EmailField(max_length=200, null=True, blank=True)
+    AlternativeEmail = models.EmailField(max_length=200, null=True, blank=True)
+    whatsapp = models.CharField(max_length=200, null=True, blank=True)
 
 
 class Portfolio(models.Model):
@@ -70,7 +76,7 @@ class Portfolio(models.Model):
 
 
 class Caption(models.Model):
-    portfolio_shot = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
+    screen_shot = models.ForeignKey(Portfolio, on_delete=models.CASCADE ,null=True, blank=True)
 
 
 class Refree(models.Model):
@@ -102,8 +108,6 @@ class JobDescription(models.Model):
     
     def __str__(self):
         return self.job_description
-
-
 
 
 
