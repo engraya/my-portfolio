@@ -35,6 +35,7 @@ class Education(models.Model):
 class Certification(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
+    image = models.ImageField(upload_to='certificates', null=True, blank=True)
     year_acquired = models.DateField(null=True, blank=True)
     provider = models.CharField(max_length=200, null=True, blank=True)
 
@@ -67,7 +68,7 @@ class Social(models.Model):
 class Portfolio(models.Model):
     title = models.CharField(max_length=200, null=True, blank=True)
     portfolio_description = models.TextField()
-    cover_image = models.ImageField(upload_to='captions', null=True, blank=True)
+    cover_image = models.ImageField(upload_to='portfolio_cover', null=True, blank=True)
     tech_stack = models.CharField(max_length=200, null=True, blank=True)
     portfolio_url = models.URLField(max_length=200, null=True, blank=True)
 
@@ -76,7 +77,7 @@ class Portfolio(models.Model):
 
 
 class Caption(models.Model):
-    screen_shot = models.ForeignKey(Portfolio, on_delete=models.CASCADE ,null=True, blank=True)
+    caption_shots = models.ForeignKey(Portfolio, on_delete=models.CASCADE ,null=True, blank=True)
 
 
 class Refree(models.Model):
@@ -108,7 +109,6 @@ class JobDescription(models.Model):
     
     def __str__(self):
         return self.job_description
-
 
 
 
