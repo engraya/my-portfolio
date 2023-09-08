@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import About, Contact, Social, SoftSkills, Softwares, TechSkills, TechStack, Education, ProfessionalExperience, Membership, JobDescription, Certification
+from .models import About, Contact, Social, SoftSkills, Softwares, TechSkills, TechStack, Education, ProfessionalExperience, Membership, JobDescription, Certification, Portfolio
+from django.core.paginator import Paginator
+
 
 # Create your views here.
-
-
 def home(request):
-    return render(request, 'baseapp/home.html')
+    socials = Social.objects.all()
+    context = { 'socials' : socials}
+    return render(request, 'baseapp/home.html', context)
 
 
 def about(request):
@@ -29,7 +31,9 @@ def resume(request):
 
 
 def portfolio(request):
-    return render(request, 'baseapp/portfolio.html')
+    portfolios = Portfolio.objects.all()
+    context = {'portfolios' : portfolios}
+    return render(request, 'baseapp/portfolio.html', context)
 
 
 def portfolioDetail(request):
@@ -37,12 +41,17 @@ def portfolioDetail(request):
 
 
 def contact(request):
-    return render(request, 'baseapp/contact.html')
+    socials = Social.objects.all()
+    context = { 'socials' : socials}
+    return render(request, 'baseapp/contact.html', context)
 
 
 def certifications(request):
     certificates = Certification.objects.all()
-    context = {'certificates' : certificates}
+    paginator = Paginator(certificates, 9)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {'certificates' : certificates, 'page_obj' : page_obj}
     return render(request, 'baseapp/certifications.html', context)
 
 
