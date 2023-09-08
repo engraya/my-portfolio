@@ -35,6 +35,11 @@ def portfolio(request):
     context = {'portfolios' : portfolios}
     return render(request, 'baseapp/portfolio.html', context)
 
+def portfolio_Detail(request, pk):
+    portfolio = Portfolio.objects.get(id=pk)
+    context = {'potfolio' : portfolio}
+    return render(request, 'baseapp/portfolio-details.html', context)
+
 
 def portfolioDetail(request):
     return render(request, 'baseapp/portfolio-details.html')

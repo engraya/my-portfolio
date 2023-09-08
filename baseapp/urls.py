@@ -9,7 +9,8 @@ urlpatterns = [
     path('portfolio', views.portfolio, name="portfolio"),
     path('contact', views.contact, name="contact"),
     path('certifications', views.certifications, name="certifications"),
-    path('portfolio-detail', views.portfolioDetail, name="detail"),
+    path('portfolio-detail/<str:pk>/', views.portfolioDetail, name="portfolio_detail"),
     path('socials', views.socials, name="socials"),
+    path('portfolio_detail', views.portfolioDetail, name="detail"),
 
 ]
