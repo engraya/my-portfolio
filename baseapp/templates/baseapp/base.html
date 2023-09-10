@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.JPG' %}" rel="icon">
+  <!-- <link href="{% static 'assets/img/favicon.JPG' %}" rel="icon"> -->
   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -39,9 +39,12 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="{% static 'assets/img/aya.jpg' %}" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="">Ahmad Yakubu Ahmad</a></h1>
-        <div class="social-links mt-3 text-center">
+        <!-- <img src="{% static 'assets/img/aya.jpg' %}" alt="" class="img-fluid rounded-circle"> -->
+        <h1 class="text-light mt-5 pt-5"><a href="">Ahmad Yakubu Ahmad</a></h1>
+        <p class="text-light justify-content-center align-items-center d-flex mt-5">Civil Engineer</p>
+        <p class="text-light justify-content-center align-items-center d-flex">Full Stack Developer</p>
+        <p class="text-light justify-content-center align-items-center d-flex">Freelancer</p>
+        <div class="social-links mt-3 text-center mt-5 pt-4">
           <a href="https://twitter.com/ahmadyakubuaya" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
           <a href="https://web.facebook.com/ahmad.yakubuahmad.7/" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
           <a href="https://www.instagram.com/aya2685/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
@@ -50,7 +53,7 @@
         </div>
       </div>
 
-      <nav id="navbar" class="nav-menu navbar">
+      <nav id="navbar" class="nav-menu navbar mt-2">
         <ul>
           <li><a href="{% url 'home' %}" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="{% url 'about' %}" class="nav-link scrollto active"><i class="bx bx-user"></i> <span>About</span></a></li>

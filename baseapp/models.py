@@ -38,6 +38,17 @@ class Education(models.Model):
         return self.title
 
 
+class EducationCertificate(models.Model):
+    certificate = models.ForeignKey(Education, on_delete=models.CASCADE, null=True, blank=True)
+    title = models.CharField(max_length=100, null=True, blank=True)
+    image = models.ImageField(upload_to='memberships', null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+
+
+
 class Certification(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
