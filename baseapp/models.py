@@ -2,6 +2,12 @@ from django.db import models
 
 # Create your models here.
 
+
+PROJECT_STATUS = (
+        ("Completed", "Completed"),
+        ("Not Completed", "Not Completed")
+    )
+
 class About(models.Model):
     full_name = models.CharField(max_length=100, null=True, blank=True)
     profession = models.CharField(max_length= 200, null=True, blank=True)
@@ -70,6 +76,8 @@ class Portfolio(models.Model):
     portfolio_description = models.TextField()
     cover_image = models.ImageField(upload_to='portfolio_cover', null=True, blank=True)
     tech_stack = models.CharField(max_length=200, null=True, blank=True)
+    deployment = models.CharField(max_length=200, null=True, blank=True)
+    status = models.CharField(max_length=100, null=True, blank=True, choices=PROJECT_STATUS)
     portfolio_url = models.URLField(max_length=200, null=True, blank=True)
 
     def __str__(self):
@@ -78,6 +86,7 @@ class Portfolio(models.Model):
 
 class Caption(models.Model):
     caption_shots = models.ForeignKey(Portfolio, on_delete=models.CASCADE ,null=True, blank=True)
+    image = models.ImageField(upload_to='captions', null=True, blank=True)
 
 
 class Refree(models.Model):
@@ -146,18 +155,6 @@ class TechStack(models.Model):
         return self.title
 
 
-
-class MembershipCertificate(models.Model):
-    title = models.CharField(max_length=100, null=True, blank=True)
-    issuing_body = models.CharField(max_length=200, null=True, blank=True)
-    issuing_year = models.CharField(max_length=200, null=True, blank=True)
-    membership_id = models.CharField(max_length=100, null=True, blank=True)
-
-    def __str__(self):
-        return self.issuing_body
-
-
-
 class Membership(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
     issuing_body = models.CharField(max_length=200, null=True, blank=True)
@@ -166,6 +163,22 @@ class Membership(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+class MembershipCertificate(models.Model):
+    certificate = models.ForeignKey(Membership, on_delete=models.CASCADE, null=True, blank=True)
+    title = models.CharField(max_length=100, null=True, blank=True)
+    issuing_body = models.CharField(max_length=200, null=True, blank=True)
+    issuing_year = models.CharField(max_length=200, null=True, blank=True)
+    membership_id = models.CharField(max_length=100, null=True, blank=True)
+    image = models.ImageField(upload_to='memberships', null=True, blank=True)
+
+    def __str__(self):
+        return self.issuing_body
+
+
+
 
 
     

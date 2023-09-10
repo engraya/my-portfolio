@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import About, Contact, Social, SoftSkills, Softwares, TechSkills, TechStack, Education, ProfessionalExperience, Membership, JobDescription, Certification, Portfolio
+from .models import About, Contact, Social, SoftSkills, Softwares, TechSkills, TechStack, Education, ProfessionalExperience, Membership, JobDescription, Certification, Portfolio, Refree
 from django.core.paginator import Paginator
 
 
@@ -26,7 +26,8 @@ def resume(request):
     educations = Education.objects.all()
     memberships = Membership.objects.all()
     experiences = ProfessionalExperience.objects.all()
-    context = { 'educations' : educations, 'memberships' : memberships, 'experiences' : experiences}
+    refrees = Refree.objects.all()
+    context = { 'educations' : educations, 'memberships' : memberships, 'experiences' : experiences, 'refrees' : refrees}
     return render(request, 'baseapp/resume.html', context)
 
 
@@ -37,7 +38,7 @@ def portfolio(request):
 
 def portfolio_Detail(request, pk):
     portfolio = Portfolio.objects.get(id=pk)
-    context = {'potfolio' : portfolio}
+    context = {'portfolio' : portfolio}
     return render(request, 'baseapp/portfolio-details.html', context)
 
 
@@ -58,6 +59,12 @@ def certifications(request):
     page_obj = paginator.get_page(page_number)
     context = {'certificates' : certificates, 'page_obj' : page_obj}
     return render(request, 'baseapp/certifications.html', context)
+
+def certificateView(request, pk):
+    certificate = Certification.objects.get(id=pk)
+    context = {'certificate' : certificate}
+    return render(request, 'baseapp/certificateView.html', context)
+
 
 
 def education(request):

@@ -22,44 +22,42 @@
   </section><!-- End Breadcrumbs -->
 
   <!-- ======= Portfolio Details Section ======= -->
+
   <section id="portfolio-details" class="portfolio-details">
     <div class="container">
 
       <div class="row gy-4">
-
+        <h2><strong>{{portfolio.title}}</strong></h2>
         <div class="col-lg-8">
           <div class="portfolio-details-slider swiper">
+            {% for shot in portfolio.caption_set.all %}
             <div class="swiper-wrapper align-items-center">
-
               <div class="swiper-slide">
-                <img src="{% static 'assets/img/portfolio/portfolio-details-1.jpg' %}" alt="">
+                <img src="{{shot.image.url}}" alt="">
               </div>
-
               <div class="swiper-slide">
-                <img src="{% static 'assets/img/portfolio/portfolio-details-2.jpg' %}" alt="">
+                <img src="{{shot.image.url}}" alt="">
               </div>
-
-              <div class="swiper-slide">
-                <img src="{% static 'assets/img/portfolio/portfolio-details-3.jpg' %}" alt="">
-              </div>
-
             </div>
+            {% endfor %}
             <div class="swiper-pagination"></div>
           </div>
         </div>
 
         <div class="col-lg-4">
           <div class="portfolio-info">
-            <h3>Portfoio Information</h3>
+            <h3>Project Information</h3>
             <ul>
-              <li><strong>Tools/Tech Stack</strong>: Web design</li>
-              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+              <li><strong>Tools/Tech Stack</strong>: {{portfolio.tech_stack}}</li>
+              <li><strong>Status</strong>: {{portfolio.status}}</li>
+              <li><strong>Deployment/Hosting</strong>: {{portfolio.deployment}}</li>
+              <li><strong>Project URL</strong>: <a href="{{portfolio.portfolio_url}}" target="_blank">{{portfolio.portfolio_url}}</a></li>
             </ul>
           </div>
           <div class="portfolio-description">
             <h2>Description</h2>
             <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              {{portfolio.portfolio_description}}
             </p>
           </div>
         </div>
