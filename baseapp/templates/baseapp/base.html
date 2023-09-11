@@ -40,7 +40,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="d-flex flex-column">
+    <div class="flex-column">
 
       <div class="profile">
         <!-- <img src="{% static 'assets/img/aya.jpg' %}" alt="" class="img-fluid rounded-circle"> -->
@@ -71,14 +71,19 @@
     </div>
   </header><!-- End Header -->
 
+
+
   
-  {% block content %}
+    <div class="d-flex justify-content-center align-content-center align-items-center mx-3">
+
+      {% block content %}
     
 
 
+      {% endblock content %}
+  
 
-  {% endblock content %}
-    
+    </div>
 
 
   <!-- ======= Footer ======= -->
