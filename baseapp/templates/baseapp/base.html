@@ -38,43 +38,28 @@
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="flex-column">
-
-      <div class="profile">
-        <!-- <img src="{% static 'assets/img/aya.jpg' %}" alt="" class="img-fluid rounded-circle"> -->
-        <h1 class="text-light mt-5 pt-5"><a href="">Ahmad Yakubu Ahmad</a></h1>
-        <p class="text-light justify-content-center align-items-center d-flex mt-5">Civil Engineer</p>
-        <p class="text-light justify-content-center align-items-center d-flex">Full Stack Developer</p>
-        <p class="text-light justify-content-center align-items-center d-flex">Freelancer</p>
-        <div class="social-links mt-3 text-center mt-5 pt-4">
-          <a href="https://twitter.com/ahmadyakubuaya" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://web.facebook.com/ahmad.yakubuahmad.7/" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/aya2685/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://github.com/engraya" target="_blank" class="google-plus"><i class="bx bxl-github"></i></a>
-          <a href="https://www.linkedin.com/in/ahmad-yakubu-ahmad-miaeng-gmnse-41520b121/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
-
-      <nav id="navbar" class="nav-menu navbar mt-2">
-        <ul>
-          <li><a href="{% url 'home' %}" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="{% url 'about' %}" class="nav-link scrollto active"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="{% url 'resume' %}" class="nav-link scrollto active"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="{% url 'portfolio' %}" class="nav-link scrollto active"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
-          <li><a href="{% url 'socials' %}" class="nav-link scrollto active"><i class="bx bx-chat"></i> <span>Socials</span></a></li>
-          <li><a href="{% url 'certifications' %}" class="nav-link scrollto active"><i class="bx bx-medal"></i> <span>Certifications</span></a></li>
-          <li><a href="{% url 'contact' %}" class="nav-link scrollto active"><i class="bx bx-envelope"></i> <span>Contact Me</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand monspace-font-family" href="#">Ahmad Yakubu Ahmad</a>
+      <a href="{% url 'home' %}" class="nav-link-lg lg link-lightscrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
+      <a href="{% url 'about' %}" class="nav-link-lg lg link-lightscrollto active"><i class="bx bx-user"></i> <span>About</span></a>
+      <a href="{% url 'resume' %}" class="nav-link-lg lg link-lightscrolltoactive"><i class="bx bx-file-blank"></i> <span>Resume</span></a>
+      <a href="{% url 'portfolio' %}" class="nav-link-lg lg link-lightscrollto active"><i class="bx bx-book-content"></i> <span>Projects</span></a>
+      <a href="{% url 'socials' %}" class="nav-link-lg lg link-lightscrollto active"><i class="bx bx-chat"></i> <span>Socials</span></a>
+      <a href="{% url 'certifications' %}" class="nav-link-lg lg link-lightscrollto active"><i class="bx bx-medal"></i> <span>Certifications</span></a>
+      <a href="{% url 'contact' %}" class="nav-link-lg lg link-lightscrollto active"><i class="bx bx-envelope"></i> <span>Contact Me</span></a>
     </div>
-  </header><!-- End Header -->
+
+  </nav>
+
+
+
+
 
 
 
   
-    <div class="d-flex justify-content-center align-content-center align-items-center mx-3">
+    <div class="d-flex justify-content-center align-content-center align-items-center mx-3 mt-5">
 
       {% block content %}
     
@@ -88,7 +73,7 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="container">
+    <div class="container container-fluid">
       <div class="copyright">
         &copy;<strong><span>engraya</span></strong>
       </div>
