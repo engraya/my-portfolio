@@ -53,7 +53,7 @@ def contact(request):
 
 
 def certifications(request):
-    certificates = Certification.objects.all()
+    certificates = Certification.objects.order_by('title')
     paginator = Paginator(certificates, 9)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
