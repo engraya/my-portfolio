@@ -100,6 +100,7 @@ class Caption(models.Model):
     image = models.ImageField(upload_to='captions', null=True, blank=True)
 
 
+
 class Refree(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     profession = models.CharField(max_length=100, null=True, blank=True)
@@ -128,8 +129,7 @@ class JobDescription(models.Model):
 
     
     def __str__(self):
-        return self.job_description
-
+        return self.description
 
 
 class SoftSkills(models.Model):

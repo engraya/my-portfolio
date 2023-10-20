@@ -25,7 +25,7 @@ def about(request):
 def resume(request):
     educations = Education.objects.all()
     memberships = Membership.objects.all()
-    experiences = ProfessionalExperience.objects.all()
+    experiences = ProfessionalExperience.objects.all().order_by('-id')
     refrees = Refree.objects.all()
     context = { 'educations' : educations, 'memberships' : memberships, 'experiences' : experiences, 'refrees' : refrees}
     return render(request, 'baseapp/resume.html', context)
