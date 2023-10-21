@@ -32,7 +32,7 @@ def resume(request):
 
 
 def portfolio(request):
-    portfolios = Portfolio.objects.all()
+    portfolios = Portfolio.objects.all().order_by('-id')
     context = {'portfolios' : portfolios}
     return render(request, 'baseapp/portfolio.html', context)
 
