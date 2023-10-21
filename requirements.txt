@@ -107,7 +107,6 @@ pypdf==3.15.4
 pypiwin32==223
 pypng==0.20220715.0
 Pyrebase4==4.5.0
-pyscopg2==66.0.2
 python-bidi==0.4.2
 python-dateutil==2.8.2
 python-decouple==3.6
