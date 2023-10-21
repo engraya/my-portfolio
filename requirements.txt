@@ -91,7 +91,6 @@ phonenumbers==8.12.47
 Pillow==9.1.0
 platformdirs==2.5.4
 protobuf==4.24.2
-psycopg2==2.9.3
 psycopg2-binary==2.9.9
 Py-Dictionary==4.1.4
 pyasn1==0.4.8
