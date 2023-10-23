@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -77,14 +79,15 @@ WSGI_APPLICATION = 'myPortfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER' : 'postgres',
-        'PASSWORD' : '28624747ahmad@Y@',
-        'HOST' : 'db.rlavrjuhwcmvkosqadep.supabase.co',
-        'PORT' : '5432'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get("postgres"),
+        'USER': os.environ.get("postgres"),
+        'PASSWORD': os.environ.get("28624747ahmad@Y@"),
+        'HOST': os.environ.get("db.rlavrjuhwcmvkosqadep.supabase.co"),
+        'PORT': os.environ.get("5432"),
     }
 }
 
@@ -125,8 +128,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [BASE_DIR/'static',]
-STATIC_ROOT = BASE_DIR/'staticfiles'
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 MEDIA_URL = '/media/'
